@@ -1,0 +1,1 @@
+KEY_BYTE_CNT = 4
