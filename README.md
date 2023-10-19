@@ -8,9 +8,9 @@
 
 ## 目录
 
-- [第一周任务1：Hello, slurm](./w1t1/)
-- [第一周任务2：Oh my password](./w1t2/)
-- [第一周任务3：Realworld example（选做）](./w1t3/)
+- [第一周任务1：Hello, slurm](./w01t1/)
+- [第一周任务2：Oh my password](./w01t2/)
+- [第一周任务3：Realworld example（选做）](./w01t3/)
 
 ## 如何使用本文档
 
