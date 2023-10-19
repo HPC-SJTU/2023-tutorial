@@ -51,3 +51,11 @@ python exploit.py
 ```
 
 **提醒**：如果需要在 slurm 脚本中使用自己的虚拟环境，请在脚本中添加激活环境需要的命令。
+
+## 任务要求
+
+1. 编写一个 slurm 脚本，在计算节点上运行 `exploit.py` 程序，破解密码
+2. （选做）`exploit.py` 破解密码的方式是单进程的，尝试使用 [multiprocesses](https://docs.python.org/3/library/multiprocessing.html)
+3. （选做）本项目还包含一个大算例 `secret_big_case.bin`，转换为多进程后可以尝试破解这个大算例
+
+> ⚠️ 请注意，单进程破解小算例和多线程破解大算例用时较长，不建议在本机上运行。
