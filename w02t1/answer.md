@@ -109,9 +109,9 @@ cd OpenBLAS-0.3.12
 
 ```bash
 # 参考 TargetList.txt
-make target=SKYLAKEX  # 可以尝试加上 -j$(nproc) 开启多线程编译
+make TARGET=SKYLAKEX  # 可以尝试加上 -j$(nproc) 开启多线程编译
 # 编译完成后进行安装，注意替换一下路径
-make target=SKYLAKEX PREFIX=/dssg/home/acct-hpc/asc/zlzhong/HPL-gcc/app/OpenBLAS-0.3.12 install
+make TARGET=SKYLAKEX PREFIX=/dssg/home/acct-hpc/asc/zlzhong/HPL-gcc/app/OpenBLAS-0.3.12 install
 # 退回到 HPL-gcc 目录
 cd ../..
 ```
