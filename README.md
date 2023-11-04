@@ -15,6 +15,9 @@
 - [第一次培训课件](./slides/00-HPL.pdf)
 - [第二周任务1：Tuning HPL](./w02t1)
 
+- [第二次培训课件](./slides/01-parallel_compute.pptx)
+- [第三周任务1：Paralizing a function](./w03t1/)
+- [第三周任务2：Optimizing the Matrix Multiplication](./w03t2)
 ## 如何使用本文档
 
 如果你已经安装了 Git，可以直接使用 `git clone` 命令将本项目克隆到本地。如果你还没有安装 Git，可以参考 [Git 官方文档](https://git-scm.com/book/zh/v2/起步-安装-Git) 安装。
