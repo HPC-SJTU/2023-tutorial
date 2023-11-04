@@ -16,7 +16,7 @@
 - [第二周任务1：Tuning HPL](./w02t1)
 
 - [第二次培训课件](./slides/01-parallel_compute.pptx)
-- [第三周任务1：Paralizing a function](./w03t1/)
+- [第三周任务1：Parallelizing a function](./w03t1/)
 - [第三周任务2：Optimizing the Matrix Multiplication](./w03t2)
 ## 如何使用本文档
 

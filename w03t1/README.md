@@ -1,4 +1,4 @@
-### 第三周任务1：Paralizing a function
+### 第三周任务1：Parallelizing a function
 
 **任务内容**：
 
