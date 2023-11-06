@@ -7,7 +7,7 @@ double func(double *A, const int lda,
     double ret = 0;
     for (int i = 0; i < N; ++i)
         for(int j = 0; j < N; ++j)
-            ret += A[i * lda + j] * B[i + ldb + j];
+            ret += A[i * lda + j] * B[i * ldb + j];
     return ret;
 }
 
