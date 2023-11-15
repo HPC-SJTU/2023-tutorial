@@ -1,0 +1,163 @@
+                MCA coll: tuned (MCA v2.1.0, API v2.0.0, Component v4.1.1)
+          MCA coll tuned: ---------------------------------------------------
+          MCA coll tuned: parameter "coll_tuned_priority" (current value: "30", data source: default, level: 6 tuner/all, type: int)
+                          Priority of the tuned coll component
+          MCA coll tuned: parameter "coll_tuned_init_tree_fanout" (current value: "4", data source: default, level: 6 tuner/all, type: int)
+                          Inital fanout used in the tree topologies for each communicator. This is only an initial guess, if a tuned collective needs a different fanout for an operation, it build it dynamically. This parameter is only for the first guess and might save a little time
+          MCA coll tuned: parameter "coll_tuned_init_chain_fanout" (current value: "4", data source: default, level: 6 tuner/all, type: int)
+                          Inital fanout used in the chain (fanout followed by pipeline) topologies for each communicator. This is only an initial guess, if a tuned collective needs a different fanout for an operation, it build it dynamically. This parameter is only for the first guess and might save a little time
+          MCA coll tuned: parameter "coll_tuned_alltoall_small_msg" (current value: "200", data source: default, level: 6 tuner/all, type: int)
+                          threshold (if supported) to decide if small MSGs alltoall algorithm will be used
+          MCA coll tuned: parameter "coll_tuned_alltoall_intermediate_msg" (current value: "3000", data source: default, level: 6 tuner/all, type: int)
+                          threshold (if supported) to decide if intermediate MSGs alltoall algorithm will be used
+          MCA coll tuned: parameter "coll_tuned_use_dynamic_rules" (current value: "false", data source: default, level: 6 tuner/all, type: bool)
+                          Switch used to decide if we use static (compiled/if statements) or dynamic (built at runtime) decision function rules
+                          Valid values: 0: f|false|disabled|no|n, 1: t|true|enabled|yes|y
+          MCA coll tuned: parameter "coll_tuned_dynamic_rules_filename" (current value: "", data source: default, level: 6 tuner/all, type: string)
+                          Filename of configuration file that contains the dynamic (@runtime) decision function rules
+          MCA coll tuned: informational "coll_tuned_allreduce_algorithm_count" (current value: "7", data source: default, level: 5 tuner/detail, type: int)
+                          Number of allreduce algorithms available
+          MCA coll tuned: parameter "coll_tuned_allreduce_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which allreduce algorithm is used. Can be locked down to any of: 0 ignore, 1 basic linear, 2 nonoverlapping (tuned reduce + tuned bcast), 3 recursive doubling, 4 ring, 5 segmented ring. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"basic_linear", 2:"nonoverlapping", 3:"recursive_doubling", 4:"ring", 5:"segmented_ring", 6:"rabenseifner"
+          MCA coll tuned: parameter "coll_tuned_allreduce_algorithm_segmentsize" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Segment size in bytes used by default for allreduce algorithms. Only has meaning if algorithm is forced and supports segmenting. 0 bytes means no segmentation.
+          MCA coll tuned: parameter "coll_tuned_allreduce_algorithm_tree_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for n-tree used for allreduce algorithms. Only has meaning if algorithm is forced and supports n-tree topo based operation.
+          MCA coll tuned: parameter "coll_tuned_allreduce_algorithm_chain_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for chains used for allreduce algorithms. Only has meaning if algorithm is forced and supports chain topo based operation.
+          MCA coll tuned: informational "coll_tuned_alltoall_algorithm_count" (current value: "6", data source: default, level: 5 tuner/detail, type: int)
+                          Number of alltoall algorithms available
+          MCA coll tuned: parameter "coll_tuned_alltoall_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which alltoall algorithm is used. Can be locked down to choice of: 0 ignore, 1 basic linear, 2 pairwise, 3: modified bruck, 4: linear with sync, 5:two proc only. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"linear", 2:"pairwise", 3:"modified_bruck", 4:"linear_sync", 5:"two_proc"
+          MCA coll tuned: parameter "coll_tuned_alltoall_algorithm_segmentsize" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Segment size in bytes used by default for alltoall algorithms. Only has meaning if algorithm is forced and supports segmenting. 0 bytes means no segmentation.
+          MCA coll tuned: parameter "coll_tuned_alltoall_algorithm_tree_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for n-tree used for alltoall algorithms. Only has meaning if algorithm is forced and supports n-tree topo based operation.
+          MCA coll tuned: parameter "coll_tuned_alltoall_algorithm_chain_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for chains used for alltoall algorithms. Only has meaning if algorithm is forced and supports chain topo based operation.
+          MCA coll tuned: parameter "coll_tuned_alltoall_large_msg" (current value: "3000", data source: default, level: 6 tuner/all, type: int)
+                          use pairwise exchange algorithm for messages larger than this value
+          MCA coll tuned: parameter "coll_tuned_alltoall_min_procs" (current value: "0", data source: default, level: 6 tuner/all, type: int)
+                          use pairwise exchange algorithm for communicators larger than this value
+          MCA coll tuned: parameter "coll_tuned_alltoall_algorithm_max_requests" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Maximum number of outstanding send or recv requests.  Only has meaning for synchronized algorithms.
+          MCA coll tuned: informational "coll_tuned_allgather_algorithm_count" (current value: "7", data source: default, level: 5 tuner/detail, type: int)
+                          Number of allgather algorithms available
+          MCA coll tuned: parameter "coll_tuned_allgather_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which allallgather algorithm is used. Can be locked down to choice of: 0 ignore, 1 basic linear, 2 bruck, 3 recursive doubling, 4 ring, 5 neighbor exchange, 6: two proc only. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"linear", 2:"bruck", 3:"recursive_doubling", 4:"ring", 5:"neighbor", 6:"two_proc"
+          MCA coll tuned: parameter "coll_tuned_allgather_algorithm_segmentsize" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Segment size in bytes used by default for allgather algorithms. Only has meaning if algorithm is forced and supports segmenting. 0 bytes means no segmentation. Currently, available algorithms do not support segmentation.
+          MCA coll tuned: parameter "coll_tuned_allgather_algorithm_tree_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for n-tree used for allgather algorithms. Only has meaning if algorithm is forced and supports n-tree topo based operation. Currently, available algorithms do not support n-tree topologies.
+          MCA coll tuned: parameter "coll_tuned_allgather_algorithm_chain_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for chains used for allgather algorithms. Only has meaning if algorithm is forced and supports chain topo based operation. Currently, available algorithms do not support chain topologies.
+          MCA coll tuned: informational "coll_tuned_allgatherv_algorithm_count" (current value: "6", data source: default, level: 5 tuner/detail, type: int)
+                          Number of allgatherv algorithms available
+          MCA coll tuned: parameter "coll_tuned_allgatherv_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which allallgatherv algorithm is used. Can be locked down to choice of: 0 ignore, 1 default (allgathervv + bcast), 2 bruck, 3 ring, 4 neighbor exchange, 5: two proc only. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"default", 2:"bruck", 3:"ring", 4:"neighbor", 5:"two_proc"
+          MCA coll tuned: parameter "coll_tuned_allgatherv_algorithm_segmentsize" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Segment size in bytes used by default for allgatherv algorithms. Only has meaning if algorithm is forced and supports segmenting. 0 bytes means no segmentation. Currently, available algorithms do not support segmentation.
+          MCA coll tuned: parameter "coll_tuned_allgatherv_algorithm_tree_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for n-tree used for allgatherv algorithms. Only has meaning if algorithm is forced and supports n-tree topo based operation. Currently, available algorithms do not support n-tree topologies.
+          MCA coll tuned: parameter "coll_tuned_allgatherv_algorithm_chain_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for chains used for allgatherv algorithms. Only has meaning if algorithm is forced and supports chain topo based operation. Currently, available algorithms do not support chain topologies.
+          MCA coll tuned: informational "coll_tuned_alltoallv_algorithm_count" (current value: "3", data source: default, level: 5 tuner/detail, type: int)
+                          Number of alltoallv algorithms available
+          MCA coll tuned: parameter "coll_tuned_alltoallv_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which alltoallv algorithm is used. Can be locked down to choice of: 0 ignore, 1 basic linear, 2 pairwise. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"basic_linear", 2:"pairwise"
+          MCA coll tuned: informational "coll_tuned_barrier_algorithm_count" (current value: "7", data source: default, level: 5 tuner/detail, type: int)
+                          Number of barrier algorithms available
+          MCA coll tuned: parameter "coll_tuned_barrier_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which barrier algorithm is used. Can be locked down to choice of: 0 ignore, 1 linear, 2 double ring, 3: recursive doubling 4: bruck, 5: two proc only, 6: tree. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"linear", 2:"double_ring", 3:"recursive_doubling", 4:"bruck", 5:"two_proc", 6:"tree"
+          MCA coll tuned: informational "coll_tuned_bcast_algorithm_count" (current value: "10", data source: default, level: 5 tuner/detail, type: int)
+                          Number of bcast algorithms available
+          MCA coll tuned: parameter "coll_tuned_bcast_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which bcast algorithm is used. Can be locked down to choice of: 0 ignore, 1 basic linear, 2 chain, 3: pipeline, 4: split binary tree, 5: binary tree, 6: binomial tree, 7: knomial tree, 8: scatter_allgather, 9: scatter_allgather_ring. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"basic_linear", 2:"chain", 3:"pipeline", 4:"split_binary_tree", 5:"binary_tree", 6:"binomial", 7:"knomial", 8:"scatter_allgather", 9:"scatter_allgather_ring"
+          MCA coll tuned: parameter "coll_tuned_bcast_algorithm_segmentsize" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Segment size in bytes used by default for bcast algorithms. Only has meaning if algorithm is forced and supports segmenting. 0 bytes means no segmentation.
+          MCA coll tuned: parameter "coll_tuned_bcast_algorithm_tree_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for n-tree used for bcast algorithms. Only has meaning if algorithm is forced and supports n-tree topo based operation.
+          MCA coll tuned: parameter "coll_tuned_bcast_algorithm_chain_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for chains used for bcast algorithms. Only has meaning if algorithm is forced and supports chain topo based operation.
+          MCA coll tuned: parameter "coll_tuned_bcast_algorithm_knomial_radix" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          k-nomial tree radix for the bcast algorithm (radix > 1).
+          MCA coll tuned: informational "coll_tuned_reduce_algorithm_count" (current value: "8", data source: default, level: 5 tuner/detail, type: int)
+                          Number of reduce algorithms available
+          MCA coll tuned: parameter "coll_tuned_reduce_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which reduce algorithm is used. Can be locked down to choice of: 0 ignore, 1 linear, 2 chain, 3 pipeline, 4 binary, 5 binomial, 6 in-order binary, 7 rabenseifner. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"linear", 2:"chain", 3:"pipeline", 4:"binary", 5:"binomial", 6:"in-order_binary", 7:"rabenseifner"
+          MCA coll tuned: parameter "coll_tuned_reduce_algorithm_segmentsize" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Segment size in bytes used by default for reduce algorithms. Only has meaning if algorithm is forced and supports segmenting. 0 bytes means no segmentation.
+          MCA coll tuned: parameter "coll_tuned_reduce_algorithm_tree_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for n-tree used for reduce algorithms. Only has meaning if algorithm is forced and supports n-tree topo based operation.
+          MCA coll tuned: parameter "coll_tuned_reduce_algorithm_chain_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for chains used for reduce algorithms. Only has meaning if algorithm is forced and supports chain topo based operation.
+          MCA coll tuned: parameter "coll_tuned_reduce_algorithm_max_requests" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Maximum number of outstanding send requests on leaf nodes. 0 means no limit.
+          MCA coll tuned: informational "coll_tuned_reduce_scatter_algorithm_count" (current value: "5", data source: default, level: 5 tuner/detail, type: int)
+                          Number of reduce_scatter algorithms available
+          MCA coll tuned: parameter "coll_tuned_reduce_scatter_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which reduce reduce_scatter algorithm is used. Can be locked down to choice of: 0 ignore, 1 non-overlapping (Reduce + Scatterv), 2 recursive halving, 3 ring, 4 butterfly. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"non-overlapping", 2:"recursive_halving", 3:"ring", 4:"butterfly"
+          MCA coll tuned: parameter "coll_tuned_reduce_scatter_algorithm_segmentsize" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Segment size in bytes used by default for reduce_scatter algorithms. Only has meaning if algorithm is forced and supports segmenting. 0 bytes means no segmentation.
+          MCA coll tuned: parameter "coll_tuned_reduce_scatter_algorithm_tree_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for n-tree used for reduce_scatter algorithms. Only has meaning if algorithm is forced and supports n-tree topo based operation.
+          MCA coll tuned: parameter "coll_tuned_reduce_scatter_algorithm_chain_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for chains used for reduce_scatter algorithms. Only has meaning if algorithm is forced and supports chain topo based operation.
+          MCA coll tuned: informational "coll_tuned_reduce_scatter_block_algorithm_count" (current value: "5", data source: default, level: 5 tuner/detail, type: int)
+                          Number of reduce_scatter_block algorithms available
+          MCA coll tuned: parameter "coll_tuned_reduce_scatter_block_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which reduce reduce_scatter_block algorithm is used. Can be locked down to choice of: 0 ignore, 1 basic_linear, 2 recursive_doubling, 3 recursive_halving, 4 butterfly. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"basic_linear", 2:"recursive_doubling", 3:"recursive_halving", 4:"butterfly"
+          MCA coll tuned: parameter "coll_tuned_reduce_scatter_block_algorithm_segmentsize" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Segment size in bytes used by default for reduce_scatter_block algorithms. Only has meaning if algorithm is forced and supports segmenting. 0 bytes means no segmentation.
+          MCA coll tuned: parameter "coll_tuned_reduce_scatter_block_algorithm_tree_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for n-tree used for reduce_scatter_block algorithms. Only has meaning if algorithm is forced and supports n-tree topo based operation.
+          MCA coll tuned: informational "coll_tuned_gather_algorithm_count" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Number of gather algorithms available
+          MCA coll tuned: parameter "coll_tuned_gather_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which gather algorithm is used. Can be locked down to choice of: 0 ignore, 1 basic linear, 2 binomial, 3 linear with synchronization. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"basic_linear", 2:"binomial", 3:"linear_sync"
+          MCA coll tuned: parameter "coll_tuned_gather_algorithm_segmentsize" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Segment size in bytes used by default for gather algorithms. Only has meaning if algorithm is forced and supports segmenting. 0 bytes means no segmentation. Currently, available algorithms do not support segmentation.
+          MCA coll tuned: parameter "coll_tuned_gather_algorithm_tree_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for n-tree used for gather algorithms. Only has meaning if algorithm is forced and supports n-tree topo based operation. Currently, available algorithms do not support n-tree topologies.
+          MCA coll tuned: parameter "coll_tuned_gather_algorithm_chain_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for chains used for gather algorithms. Only has meaning if algorithm is forced and supports chain topo based operation. Currently, available algorithms do not support chain topologies.
+          MCA coll tuned: informational "coll_tuned_scatter_algorithm_count" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Number of scatter algorithms available
+          MCA coll tuned: parameter "coll_tuned_scatter_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which scatter algorithm is used. Can be locked down to choice of: 0 ignore, 1 basic linear, 2 binomial, 3 non-blocking linear. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"basic_linear", 2:"binomial", 3:"linear_nb"
+          MCA coll tuned: parameter "coll_tuned_scatter_algorithm_segmentsize" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Segment size in bytes used by default for scatter algorithms. Only has meaning if algorithm is forced and supports segmenting. 0 bytes means no segmentation. Currently, available algorithms do not support segmentation.
+          MCA coll tuned: parameter "coll_tuned_scatter_algorithm_tree_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for n-tree used for scatter algorithms. Only has meaning if algorithm is forced and supports n-tree topo based operation. Currently, available algorithms do not support n-tree topologies.
+          MCA coll tuned: parameter "coll_tuned_scatter_algorithm_chain_fanout" (current value: "4", data source: default, level: 5 tuner/detail, type: int)
+                          Fanout for chains used for scatter algorithms. Only has meaning if algorithm is forced and supports chain topo based operation. Currently, available algorithms do not support chain topologies.
+          MCA coll tuned: parameter "coll_tuned_scatter_min_procs" (current value: "0", data source: default, level: 6 tuner/all, type: int)
+                          use basic linear algorithm for communicators larger than this value
+          MCA coll tuned: parameter "coll_tuned_scatter_algorithm_max_requests" (current value: "0", data source: default, level: 5 tuner/detail, type: int)
+                          Issue a blocking send every this many non-blocking requests. Only has meaning for non-blocking linear algorithm.
+          MCA coll tuned: parameter "coll_tuned_scatter_intermediate_msg" (current value: "0", data source: default, level: 6 tuner/all, type: int)
+                          use non-blocking linear algorithm for messages larger than this value
+          MCA coll tuned: parameter "coll_tuned_scatter_large_msg" (current value: "0", data source: default, level: 6 tuner/all, type: int)
+                          use linear algorithm for messages larger than this value
+          MCA coll tuned: informational "coll_tuned_exscan_algorithm_count" (current value: "3", data source: default, level: 5 tuner/detail, type: int)
+                          Number of exscan algorithms available
+          MCA coll tuned: parameter "coll_tuned_exscan_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which exscan algorithm is used. Can be locked down to choice of: 0 ignore, 1 linear, 2 recursive_doubling. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"linear", 2:"recursive_doubling"
+          MCA coll tuned: informational "coll_tuned_scan_algorithm_count" (current value: "3", data source: default, level: 5 tuner/detail, type: int)
+                          Number of scan algorithms available
+          MCA coll tuned: parameter "coll_tuned_scan_algorithm" (current value: "ignore", data source: default, level: 5 tuner/detail, type: int)
+                          Which scan algorithm is used. Can be locked down to choice of: 0 ignore, 1 linear, 2 recursive_doubling. Only relevant if coll_tuned_use_dynamic_rules is true.
+                          Valid values: 0:"ignore", 1:"linear", 2:"recursive_doubling"
