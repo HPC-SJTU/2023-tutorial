@@ -2,7 +2,7 @@
 #include <time.h>
 #include <omp.h>
 
-double func(double *A, const int lda,
+double serial_func(double *A, const int lda,
             double *B, const int ldb, const int N) {
     double ret = 0;
     for (int i = 0; i < N; ++i)
@@ -11,6 +11,14 @@ double func(double *A, const int lda,
     return ret;
 }
 
+double func(double *A, const int lda,
+            double *B, const int ldb, const int N) {
+    double ret = 0;
+    for (int i = 0; i < N; ++i)
+        for(int j = 0; j < N; ++j)
+            ret += A[i * lda + j] * B[i * ldb + j];
+    return ret;
+}
 int main() {
     
     const int MaxN = 8192;
@@ -26,10 +34,18 @@ int main() {
                 B[i * MaxN + j] = j;
             }
         }
+        double std = serial_func(A, MaxN,
+                    B, MaxN, N);
+        
         clock_gettime(CLOCK_MONOTONIC, &t1);
-        for (int i = 0; i < Ntest;++i)
-            func(A, MaxN,
+        for (int i = 0; i < Ntest;++i) {
+            double ans = func(A, MaxN,
                 B, MaxN, N);
+            if (ans != std) {
+                printf("Wrong Answer\n");
+                return 0;
+            }
+        }
         clock_gettime(CLOCK_MONOTONIC, &t2);
         double tv = (t2.tv_sec - t1.tv_sec) * 1e3 + (t2.tv_nsec - t1.tv_nsec) * 1e-6;
         printf("Task Size:%4d, Avg Time %8.3lf\n", N, tv / Ntest);
