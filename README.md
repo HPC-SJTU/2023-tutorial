@@ -22,6 +22,7 @@
 - [第三次培训示例](./w04example/)
 - [第四次培训课件](./slides/03-Compile.pdf)
 - [第四次培训示例](./w05example/)
+- [第五次培训课件](./slides/04-CUDA.pptx)
 ## 如何使用本文档
 
 如果你已经安装了 Git，可以直接使用 `git clone` 命令将本项目克隆到本地。如果你还没有安装 Git，可以参考 [Git 官方文档](https://git-scm.com/book/zh/v2/起步-安装-Git) 安装。
